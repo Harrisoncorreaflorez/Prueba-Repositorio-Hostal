@@ -11,6 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 @Builder
+
 public class Room {
 
     @Id

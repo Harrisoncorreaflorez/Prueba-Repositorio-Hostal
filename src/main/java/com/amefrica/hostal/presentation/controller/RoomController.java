@@ -21,6 +21,7 @@ public class RoomController {
     @PostMapping
     public ResponseEntity<?> create(@Valid @RequestBody RoomRequestDto roomRequestDto){
 
-        ResponseEntity.ok(roomService.create(roomRequestDto));
+        //ResponseEntity.ok(roomService.create(roomRequestDto));
+        return null;
     }
 }

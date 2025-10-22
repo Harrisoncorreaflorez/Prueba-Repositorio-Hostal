@@ -19,7 +19,7 @@ public class RoomServiceImpl  implements RoomService {
     @Override
     public RoomResponseDto create(RoomRequestDto roomRequestDto) {
 
-        repository.save(RoomMapper(roomRequestDto));
+        //repository.save(RoomMapper(roomRequestDto));
 
         return null;
     }
