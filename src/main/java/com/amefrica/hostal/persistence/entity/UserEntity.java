@@ -30,13 +30,14 @@ public class UserEntity {
     @Column(name = "is_enabled")
     private boolean isEnabled;
 
-    @Column(name = "account_no_locked")
-    private boolean accountNoLocked;
+    @Column(name = "account_no_Expired")
+    private boolean  accountNoExpired;
 
+    @Column(name = "account_no_Locked")
+    private boolean accountNoLocked;
 
     @Column(name = "credential_no_expired")
     private boolean credentialNoExpired;
-
 
     @ManyToMany
     @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"),
