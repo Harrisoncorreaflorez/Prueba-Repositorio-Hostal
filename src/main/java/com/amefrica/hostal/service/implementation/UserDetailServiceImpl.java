@@ -2,7 +2,7 @@ package com.amefrica.hostal.service.implementation;
 
 import com.amefrica.hostal.persistence.entity.UserEntity;
 import com.amefrica.hostal.persistence.repository.UserRepository;
-import org.springframework.security.core.GrantedAuthority;
+
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -37,16 +37,18 @@ public class UserDetailServiceImpl implements UserDetailsService {
         List<SimpleGrantedAuthority> authorityList = new ArrayList<>();
 
         userEntity.getRoleEntities()
-                .forEach(role -> authorityList.add(new SimpleGrantedAuthority("Role_".concat(role.getRoleEnum().toString()))));
+                .forEach(role -> authorityList.add(new SimpleGrantedAuthority("ROLE_".concat(role.getRoleEnum().toString()))));
+
+
 
 
         return new User(
                 userEntity.getEmail(),
                 userEntity.getPassword(),
                 userEntity.isEnabled(),
-                userEntity.isAccountNoExpired(),
-                userEntity.isCredentialNoExpired(),
-                userEntity.isAccountNoExpired(),authorityList
+                userEntity.isAccountNonExpired(),
+                userEntity.isCredentialNonExpired(),
+                userEntity.isAccountNonExpired(),authorityList
         );
 
 
